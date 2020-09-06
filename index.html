@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is common site</title>
+    <!--Bootstrap css link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!--Font awesome cdn link-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Google font css link-->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+
+    <!--External css link-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #leap-year{
+            width: 25%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="leap-year" class="d-flex flex-column m-auto justify-content-center">
+            <input id="year" class="form-control text-center font-weight-bold" type="text" placeholder="Enter Year">
+            <h5 id="content" class="text-center my-4">Check Leap Year</h5>
+            <button id="checkBtn" class="btn btn-success">CHECK</button>
+        </div>
+    </div>
+  
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var checkButton = document.getElementById("checkBtn");
+        checkButton.addEventListener("click", function(){
+            var year = parseFloat(document.getElementById("year").value);
+            if (year % 400 == 0) {
+                document.getElementById("content").innerText = "Leap Year";
+            }else if (year % 4 ==0) {
+                document.getElementById("content").innerText = "Leap Year";
+            }else{
+                document.getElementById("content").innerText = "Not Leap Year";
+            }
+        })
+    </script>
+</body>
+</html>
