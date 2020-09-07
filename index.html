@@ -17,7 +17,7 @@
     <!--External css link-->
     <link rel="stylesheet" href="style.css">
     <style>
-        #leap-year{
+        #isPrime{
             width: 25%;
             height: 100vh;
         }
@@ -26,9 +26,9 @@
 <body>
 
     <div class="container">
-        <div id="leap-year" class="d-flex flex-column m-auto justify-content-center">
-            <input id="year" class="form-control text-center font-weight-bold" type="text" placeholder="Enter Year">
-            <h5 id="content" class="text-center my-4">Check Leap Year</h5>
+        <div id="isPrime" class="d-flex flex-column justify-content-center m-auto">
+            <input id="number" type="text" class="form-control text-center font-weight-bold" placeholder="Enter number" autocomplete="off">
+            <h5 id="content" class="text-center my-4">Check Prime Number</h5>
             <button id="checkBtn" class="btn btn-success">CHECK</button>
         </div>
     </div>
@@ -42,15 +42,26 @@
     <script>
         var checkButton = document.getElementById("checkBtn");
         checkButton.addEventListener("click", function(){
-            var year = parseFloat(document.getElementById("year").value);
-            if (year % 400 == 0) {
-                document.getElementById("content").innerText = "Leap Year";
-            }else if (year % 4 ==0) {
-                document.getElementById("content").innerText = "Leap Year";
-            }else{
-                document.getElementById("content").innerText = "Not Leap Year";
+
+        var number =parseFloat(document.getElementById("number").value);
+        function getPrime(num){
+            for (let i = 2; i < num; i++) {
+                if (num % i ==0) {
+                    return document.getElementById("content").innerText = "Not prime Number"
+                }            
             }
-        })
+            return document.getElementById("content").innerText = "Prime Number"
+        }
+        getPrime(number)
+   })//this is function ()
+
+   var number = document.getElementById("number");
+   number.addEventListener("focus", function(){
+        document.getElementById("number").value = "";
+        document.getElementById("content").innerText = "Check Prime Number"
+   })
+
+
     </script>
 </body>
 </html>
